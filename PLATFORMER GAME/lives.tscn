@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://lives.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.168627, 0.168627, 0.168627, 0.223529 )
+
+[node name="lives" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -284.0
+margin_top = -252.0
+margin_right = -284.0
+margin_bottom = -252.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.089
+anchor_right = 0.089
+anchor_bottom = 0.013
+margin_left = 63.864
+margin_top = 71.0
+margin_right = 119.864
+margin_bottom = 85.2
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+margin_right = 56.0
+margin_bottom = 22.0
+
+[node name="label" type="Label" parent="Panel/MarginContainer/HBoxContainer"]
+margin_top = 4.0
+margin_right = 37.0
+margin_bottom = 18.0
+size_flags_stretch_ratio = 0.49
+text = "Lives:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nlives" type="Label" parent="Panel/MarginContainer/HBoxContainer"]
+margin_left = 41.0
+margin_top = 4.0
+margin_right = 49.0
+margin_bottom = 18.0
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}

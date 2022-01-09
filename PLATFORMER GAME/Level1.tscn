@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://tiles2.tres" type="TileSet" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://soil black.png" type="Texture" id=4]
+[ext_resource path="res://lvl prototype.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 16 )
+
+[node name="Level1" type="Node2D"]
+position = Vector2( 1, -11 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -6, 11 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 226, -20 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 131074, 0, 0, 131080, 0, 0, 262122, 0, 0, 262123, 0, 0, 262124, 0, 0, 262125, 0, 0, 262126, 0, 0, 262127, 0, 0, 262128, 0, 0, 262129, 0, 0, 262130, 0, 0, 262131, 0, 0, 262132, 0, 0, 262133, 0, 0, 262134, 0, 0, 262135, 0, 0, 262136, 0, 0, 262137, 0, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0 )
+
+[node name="enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 296, 18 )
+
+[node name="lvl1 to lvl2" type="Area2D" parent="."]
+position = Vector2( 394, 13 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="lvl1 to lvl2"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1 to lvl2"]
+shape = SubResource( 1 )

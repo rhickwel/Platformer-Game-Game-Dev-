@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://tiles2.tres" type="TileSet" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://lives.tscn" type="PackedScene" id=4]
+
+[node name="Level2" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -4, 0, 0, -65532, 2, 0, 65532, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+
+[node name="enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 29, 8 )
+
+[node name="lives" parent="." instance=ExtResource( 4 )]
+margin_top = -56.0
+margin_bottom = -56.0
